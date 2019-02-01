@@ -59,7 +59,7 @@ class APIStrategy:
         '10'}
         :return:
         """
-        content = request.get_json()
+        content = request.values
         localid = content['localid']
         sell_price = content['sell_price']
         sell_amount = content['sell_amount']
@@ -79,7 +79,7 @@ class APIStrategy:
         content = {'localid': '123123123', 'action': 'cancell_order'}
         :return:
         """
-        content = request.get_json()
+        content = request.values
         localid = content['localid']
         # TODO: 在查单以后到撤销操作被交易所执行的时间里，订单可能被成交
         buy_oid = self.order_dict[localid]['buy_order'].order_id
@@ -106,7 +106,7 @@ class APIStrategy:
         content = {'localid': '123123123'}
         :return:
         """
-        content = request.get_json()
+        content = request.values
         localid = content['localid']
         buy_oid = self.order_dict[localid]['buy_order'].order_id
         sell_oid = self.order_dict[localid]['sell_order'].order_id
@@ -139,7 +139,7 @@ class APIStrategy:
         content = {'localid': '123123123'}
         :return:
         """
-        content = request.get_json()
+        content = request.values
         localid = content['localid']
         buy_oid = self.order_dict[localid]['buy_order'].order_id
         sell_oid = self.order_dict[localid]['sell_order'].order_id
@@ -179,7 +179,7 @@ class APIStrategy:
         :return:
         """
         # TODO 检查是否和期望的一致，如果不一致，需要报警查询原因
-        content = request.get_json()
+        content = request.values
         localid = content['localid']
         buy_oid = self.order_dict[localid]['buy_order'].order_id
         sell_oid = self.order_dict[localid]['sell_order'].order_id
@@ -205,7 +205,7 @@ class APIStrategy:
         content = {'localid': '123123123'}
         :return:
         """
-        content = request.get_json()
+        content = request.values
         localid = content['localid']
         buy_oid = self.order_dict[localid]['buy_order'].order_id
         sell_oid = self.order_dict[localid]['sell_order'].order_id
@@ -245,7 +245,7 @@ class APIStrategy:
         content = {'localid': '123123123'}
         :return:
         """
-        content = request.get_json()
+        content = request.values
         localid = content['localid']
         buy_oid = self.order_dict[localid]['buy_order'].order_id
         sell_oid = self.order_dict[localid]['sell_order'].order_id
