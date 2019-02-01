@@ -5,7 +5,7 @@ sys.path.append('../')
 host = '127.0.0.1:5000'
 localid = '123456'
 
-send_order_content = {'localid': localid, 'sell_price': 2.3, 'sell_amount': 1, 'buy_price': 2.259, 'buy_amount': 1}
+send_order_content = {'localid': localid, 'short_price': 2.3, 'short_amount': 1, 'long_price': 2.259, 'long_amount': 1}
 url = 'http://'+host+'/send_order'
 send_order_res = requests.post(url, data=send_order_content)
 print(send_order_res.url, send_order_res.text)

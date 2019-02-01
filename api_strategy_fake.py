@@ -61,10 +61,10 @@ class APIStrategy:
         """
         content = request.values
         localid = content['localid']
-        sell_price = content['sell_price']
-        sell_amount = content['sell_amount']
-        buy_price = content['buy_price']
-        buy_amount = content['buy_amount']
+        sell_price = content['short_price']
+        sell_amount = content['short_amount']
+        buy_price = content['long_price']
+        buy_amount = content['long_amount']
 
         if not isinstance(buy_order, events.OrderFeedback) or not isinstance(sell_order, events.OrderFeedback):
             return jsonify({'status': False, 'errmsg': 'send order failed'})
