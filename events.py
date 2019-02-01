@@ -1,7 +1,5 @@
 from circuits import Event
 from decimal import Decimal
-from base import base_utils
-from base.logconf import logger
 
 
 class Depth(Event):
@@ -280,7 +278,7 @@ class Order(Event):
 class OrderResended(Event):
     def __init__(self, order, new_order):
         super().__init__(order, new_order)
-        logger.info(' '.join(['Reordering',str(order.order_id)]))
+        # logger.info(' '.join(['Reordering',str(order.order_id)]))
 
 
 class Devolve(Event):
@@ -295,7 +293,7 @@ class Devolve(Event):
         self.devolve_to = devolve_to
         self.localtime = localtime
         self.raw = raw
-        logger.info(' '.join(['Devolve',market['name']+'_'+coin,str(amount)]))
+        # logger.info(' '.join(['Devolve',market['name']+'_'+coin,str(amount)]))
 
 
 class PairDict(Event):
