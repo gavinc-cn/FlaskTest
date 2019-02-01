@@ -50,7 +50,7 @@ class APIStrategy:
         self.webserver.add_url_rule('/fix_market_order', 'fix_market_order', self.fix_market_order_handler, methods=['POST'])
 
     def started(self, *args):
-        self.webserver.run()
+        self.webserver.run(host='0.0.0.0')
         # base_utils.run_async(self.webserver.run)
 
     def send_order_handler(self):
