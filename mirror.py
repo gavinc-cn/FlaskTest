@@ -14,7 +14,7 @@ def values2dict(content):
     return _dict
 
 
-@app.route("/mirror", method=['GET', "POST"])
+@app.route("/mirror", methods=['GET', "POST"])
 def mirror():
     content = values2dict(request.values)
     return jsonify(content)
