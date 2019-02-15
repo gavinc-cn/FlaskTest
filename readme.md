@@ -1,4 +1,5 @@
 # 接口说明
+# copyright@gavinc
 
 host：47.105.74.100:5000
 所有请求方法均为POST
